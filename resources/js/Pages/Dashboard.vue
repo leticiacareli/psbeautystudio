@@ -1,14 +1,14 @@
 <script setup>
 
     import { Head, Link } from '@inertiajs/vue3';
-    import DefaultDashboard from '../Layout/DefaultDashboard.vue';
+    import BaseDashboard from '../Layout/BaseDashboard.vue';
 
 </script>
 
 <template>
 
-    <Head title="Dashboard" />
+    <Head title="Dashboard"/>
 
-    <DefaultDashboard/>
+    <BaseDashboard/>
     
 </template>

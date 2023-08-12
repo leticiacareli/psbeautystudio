@@ -1,9 +1,12 @@
 <script setup>
 
     import MenuIcon from '../Components/Icons/MenuIcon.vue';
-    import SearchIcon from '../Components/Icons/SearchIcon.vue';
     import BellIcon from '../Components/Icons/BellIcon.vue';
     import AppIcon from '../Components/Icons/AppIcon.vue';
+
+    import Notification from './Notification.vue';
+    import Service from './Service.vue';
+    import MenuProfile from './MenuProfile.vue';
 
     import { onMounted } from 'vue';
     import { initDrawers } from 'flowbite';
@@ -46,46 +49,9 @@
                     </div>
                     <!-- End Logo -->
 
-                    <!-- Input Search -->
-                    <!-- <form class="hidden md:block md:pl-2">
-
-                        <label for="topbar-search" class="sr-only">Search</label>
-
-                        <div class="relative md:w-96">
-
-                            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-
-                                <SearchIcon/>
-
-                            </div>
-
-                            <input
-                                type="text"
-                                name="email"
-                                id="topbar-search"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                placeholder="Pesquisar"/>
-
-                        </div>
-
-                    </form> -->
-                    <!-- End Input Search -->
-
                 </div>
 
                 <div class="flex items-center space-x-6 lg:order-2">
-
-                    <button
-                        type="button"
-                        data-drawer-toggle="drawer-navigation"
-                        aria-controls="drawer-navigation"
-                        class="p-2 mr-1 text-gray-500 rounded-lg md:hidden hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600">
-
-                            <span class="sr-only">Toggle search</span>
-
-                            <SearchIcon/>
-
-                    </button>
 
                     <button
                         type="button"
@@ -101,7 +67,7 @@
                     <!-- Notifications -->
                     <div id="notification-dropdown" class="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700 rounded-xl">
 
-                        <slot name="notification"></slot>
+                        <Notification/>
 
                     </div>
                     <!-- End Notifications -->
@@ -120,7 +86,7 @@
 
                     <div id="apps-dropdown" class="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white divide-y divide-gray-100 shadow-lg dark:bg-gray-700 dark:divide-gray-600 rounded-xl">
 
-                        <slot name="service"></slot>
+                        <Service/>
 
                     </div>
                     <!-- End Services -->
@@ -145,7 +111,7 @@
 
                     <div id="user-dropdown" class="hidden z-50 my-4 w-52 text-base list-none bg-white divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded">
 
-                        <slot name="profile"></slot>
+                        <MenuProfile/>
 
                     </div>
 
@@ -154,21 +120,6 @@
             </div>
 
         </nav>
-
-        <aside 
-            id="drawer-navigation"
-            aria-label="Sidenan"
-            class="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-white border-r border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700">
-
-            <slot name="sidebar"></slot>
-
-        </aside>
-
-        <main class="p-4 md:ml-64 h-auto pt-20">
-
-            <slot name="main"></slot>
-
-        </main>
 
     </div>
 
