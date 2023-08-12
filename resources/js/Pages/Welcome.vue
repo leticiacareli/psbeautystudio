@@ -1,6 +1,7 @@
 <script setup>
 
     import { Head, Link } from '@inertiajs/vue3';
+    import Menu from '../Components/Menu.vue';
 
 </script>
 
@@ -8,7 +9,6 @@
 
     <Head title="Welcome" />
 
-    <h1 class="text-3xl font-bold underline text-red-600">
-        Hello world!
-    </h1>
+    <h1>Landing Page</h1>
+
 </template>
