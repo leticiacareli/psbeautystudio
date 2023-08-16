@@ -1,7 +1,6 @@
 <script setup>
 
     import { Head, Link } from '@inertiajs/vue3';
-    import Menu from '../Components/Menu.vue';
 
 </script>
 

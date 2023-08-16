@@ -1,7 +1,9 @@
 <script setup>
 
-    import { Head, Link } from '@inertiajs/vue3';
+    import { Head } from '@inertiajs/vue3';
     import BaseDashboard from '../Layout/BaseDashboard.vue';
+    import DefaultDashboard from '../Components/DefaultDashboard.vue';
+    import CustomerIndex from '../Pages/Customer/Index.vue';
 
 </script>
 
@@ -9,6 +11,8 @@
 
     <Head title="Dashboard"/>
 
-    <BaseDashboard/>
-    
+    <BaseDashboard>
+        <DefaultDashboard/>
+    </BaseDashboard>
+
 </template>

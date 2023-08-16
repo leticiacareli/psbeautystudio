@@ -7,6 +7,11 @@
     import SaleIcon from './Icons/SaleIcon.vue';
     import MessageIcon from '../Components/Icons/MessageIcon.vue';
 
+
+    import Dropdown from './Dropdown.vue';
+    import DropdownLink from './DropdownLink.vue';
+    import NavLink from './NavLink.vue';
+
 </script>
 
 <template>
@@ -17,43 +22,42 @@
 
             <li>
 
-                <a 
-                    href="#" 
-                    class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <NavLink
+                    :href="route('dashboard')">
 
-                    <OverviewIcon/>
+                    <template #nav-icon>
+                        <OverviewIcon/>
+                    </template>
 
-                    <span class="ml-3">Geral</span>
+                    <template #nav-description>
+                        Geral
+                    </template>
 
-                </a>
+                </NavLink>
 
             </li>
 
             <li>
 
-                <button
-                    type="button"
+                <Dropdown
                     aria-controls="dropdown-register"
-                    data-collapse-toggle="dropdown-register"
-                    class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    data-collapse-toggle="dropdown-register">
 
-                    <PageIcon/>
+                    <template #icon>
+                        <PageIcon/>
+                    </template>
 
-                    <span class="flex-1 ml-3 text-left whitespace-nowrap">Cadastros</span>
+                    <template #description>
+                        Cadastros
+                    </template>
 
-                    <ArrowDownIcon/>
-
-                </button>
+                </Dropdown>
                 
                 <ul id="dropdown-register" class="hidden py-2 space-y-2">
 
                     <li>
 
-                        <a href="#" class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-
-                            Cliente
-
-                        </a>
+                        <DropdownLink :href="route('customer.index')">Clientes</DropdownLink>
 
                     </li>
 

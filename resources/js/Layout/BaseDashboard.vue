@@ -6,6 +6,7 @@
 
     import { onMounted } from 'vue';
     import { initDrawers } from 'flowbite';
+    import { Link } from '@inertiajs/vue3';
 
     onMounted(() => {
         initDrawers();
@@ -21,7 +22,7 @@
 
         <aside 
             id="drawer-navigation"
-            aria-label="Sidenan"
+            aria-label="Sidenav"
             class="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-white border-r border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700">
 
             <Sidebar/>
@@ -30,54 +31,9 @@
 
         <main class="p-4 md:ml-64 h-auto pt-20">
 
-            <DefaultDashboard/>
+            <slot></slot>
 
         </main>
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <Menu>
-        <template #notification>
-            <Notification></Notification>
-        </template>
-
-        <template #service>
-            <Service></Service>
-        </template>
-
-        <template #profile>
-            <MenuProfile></MenuProfile>
-        </template>
-
-        <template #sidebar>
-            <Sidebar></Sidebar>
-        </template>
-
-        <template #main>
-            <MainDashboard></MainDashboard>
-        </template>
-    </Menu> -->
 </template>
